@@ -1,4 +1,4 @@
-package com.axproject.newsapplication.ui.data.model
+package com.axproject.newsapplication.data.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
@@ -7,33 +7,33 @@ data class Article(
 
     @SerializedName("source")
     @Expose
-    private var source: Source,
+    var source: Source,
 
     @SerializedName("author")
     @Expose
-    private var author: String,
+    var author: String,
 
     @SerializedName("title")
     @Expose
-    private var title: String,
+    var title: String,
 
     @SerializedName("description")
     @Expose
-    private var description: String,
+    var description: String,
 
     @SerializedName("url")
     @Expose
-    private var url: String,
+    var url: String,
 
     @SerializedName("urlToImage")
     @Expose
-    private var urlToImage: String,
+    var urlToImage: String,
 
     @SerializedName("publishedAt")
     @Expose
-    private var publishedAt: String,
+    var publishedAt: String,
 
     @SerializedName("content")
     @Expose
-    private var content: String
+    var content: String
 )

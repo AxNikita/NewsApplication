@@ -1,8 +1,8 @@
-package com.axproject.newsapplication.ui.core
+package com.axproject.newsapplication.core
 
 import android.app.Application
-import com.axproject.newsapplication.ui.di.module.NetworkModule
-import com.axproject.newsapplication.ui.source.NetworkSourceService
+import com.axproject.newsapplication.di.module.NetworkModule
+import com.axproject.newsapplication.source.NetworkSourceService
 
 class App : Application() {
 

@@ -7,7 +7,9 @@ import com.astuetz.PagerSlidingTabStrip
 import com.axproject.newsapplication.R
 
 class NewsFragmentPagerAdapter(fragmentManager: FragmentManager, private val fragmentList : List<Fragment>)
-    : FragmentPagerAdapter(fragmentManager), PagerSlidingTabStrip.IconTabProvider {
+    : FragmentPagerAdapter(fragmentManager)
+//    , PagerSlidingTabStrip.IconTabProvider
+{
 
     private val tabIcons = listOf(R.drawable.ic_launcher_background, R.drawable.ic_launcher_background)
 
@@ -19,8 +21,8 @@ class NewsFragmentPagerAdapter(fragmentManager: FragmentManager, private val fra
         return fragmentList[position]
     }
 
-    override fun getPageIconResId(position: Int): Int {
-        return tabIcons[position]
-    }
+//    override fun getPageIconResId(position: Int): Int {
+//        return tabIcons[position]
+//    }
 
 }

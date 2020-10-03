@@ -22,6 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
+                android:textColor="@android:color/black"
                 android:hint="test"/>
 
             <TextView
@@ -30,6 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/news_title"
                 android:layout_centerHorizontal="true"
+                android:textColor="@android:color/black"
                 android:hint="test"/>
 
             <ImageView
@@ -45,6 +47,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/news_img"
+                android:textColor="@android:color/black"
                 android:layout_centerHorizontal="true"
                 android:hint="test"/>
 

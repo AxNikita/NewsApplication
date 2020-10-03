@@ -8,23 +8,16 @@
         android:layout_height="match_parent"
         tools:context=".ui.acttivity.MainActivity">
 
-        <com.astuetz.PagerSlidingTabStrip
-            android:id="@+id/tabs"
-            app:pstsShouldExpand="true"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:textSize="14sp"
-            android:textColor="#000000"
-            app:pstsDividerColor="@color/colorAccent"
-            app:pstsIndicatorColor="@color/colorPrimary"
-            app:pstsUnderlineColor="@color/colorPrimaryDark"
-            app:pstsTabPaddingLeftRight="14dp" />
+<!--        <com.astuetz.PagerSlidingTabStrip-->
+<!--            android:id="@+id/tabs"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="48dip"-->
+<!--            android:background="@color/colorPrimaryDark" />-->
 
         <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/tabs"/>
+            android:layout_height="match_parent" />
 
     </RelativeLayout>
 </layout>

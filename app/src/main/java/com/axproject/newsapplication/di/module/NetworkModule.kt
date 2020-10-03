@@ -1,17 +1,12 @@
-package com.axproject.newsapplication.ui.di.module
+package com.axproject.newsapplication.di.module
 
-import android.content.Context
-import com.axproject.newsapplication.ui.source.NetworkSourceService
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
+import com.axproject.newsapplication.source.NetworkSourceService
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Response
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
-import java.io.File
+import java.util.concurrent.TimeUnit
 
 class NetworkModule {
 
@@ -33,11 +28,13 @@ class NetworkModule {
         return GsonConverterFactory.create()
     }
 
-
     fun okHttpClient(httpInterceptor: Interceptor): OkHttpClient {
         return OkHttpClient()
             .newBuilder()
             .addInterceptor(httpInterceptor)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .callTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 
@@ -47,7 +44,7 @@ class NetworkModule {
                 val origin = chain.request()
                 val requestBuilder = origin.newBuilder()
                     .addHeader("Content-Type", "application/json")
-                    .addHeader("apiKey", "e65ee0938a2a43ebb15923b48faed18d") // TODO: 03.10.2020 Проверить работоспособность, реализовать согласно документации
+//                    .addHeader("apiKey", "e65ee0938a2a43ebb15923b48faed18d") // TODO: 03.10.2020 Проверить работоспособность, реализовать согласно документации
                 val request = requestBuilder.build()
                 return chain.proceed(request)
             }
