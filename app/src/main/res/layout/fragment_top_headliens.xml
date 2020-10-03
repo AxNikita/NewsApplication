@@ -2,11 +2,15 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.fragment.topheadlines.TopHeadlines">
+        tools:context=".ui.MainActivity">
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/top_news_list"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-    </FrameLayout>
+    </RelativeLayout>
 </layout>
