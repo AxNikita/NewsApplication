@@ -30,26 +30,24 @@ class TopHeadlinesFragment : Fragment() {
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_top_headliens, container, false)
         viewModel = ViewModelProvider(this).get(TopHeadlinesViewModel::class.java)
+        viewModel.setContext(context!!)
+        viewModel.initTimer()
         return binding.root
     }
 
     override fun onStart() {
         super.onStart()
-        initListener()
         initNewsList()
     }
 
-    private fun initListener() {
-
-
-    }
 
     private fun initNewsList() {
         listLayoutManager = LinearLayoutManager(context)
         listAdapter = NewsListAdapter()
-        viewModel.getTopArticle().observe(viewLifecycleOwner, {
+        viewModel.getTopArticle().observeForever{
+            println("ADD NEW NEWS")
             listAdapter.addCallLogList(it)
-        })
+        }
         binding.topNewsList.apply {
             setHasFixedSize(true)
             layoutManager = listLayoutManager

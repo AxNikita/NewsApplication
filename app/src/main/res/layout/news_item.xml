@@ -63,6 +63,17 @@
                 android:textSize="15sp"
                 android:hint="news_description"/>
 
+            <ImageView
+                android:id="@+id/news_save_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_description"
+                android:background="@drawable/ic_star_24"
+                android:layout_alignParentEnd="true"
+                android:visibility="invisible"
+                android:hint="news_img"/>
+
 
         </RelativeLayout>
 
