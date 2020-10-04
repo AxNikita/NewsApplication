@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
@@ -18,38 +18,51 @@
             android:layout_margin="24dp">
 
             <TextView
-                android:id="@+id/news_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:textColor="@android:color/black"
-                android:hint="test"/>
-
-            <TextView
                 android:id="@+id/news_author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/news_title"
-                android:layout_centerHorizontal="true"
-                android:textColor="@android:color/black"
-                android:hint="test"/>
-
-            <ImageView
-                android:id="@+id/news_img"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_below="@id/news_author"
-                android:layout_centerHorizontal="true"
-                android:hint="test"/>
+                android:textColor="@color/colorMediumChocolate"
+                android:textStyle="bold"
+                android:hint="news_author"/>
 
             <TextView
                 android:id="@+id/news_published_at"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorLightChocolate"
+                android:hint="news_published_at"/>
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_author"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:hint="news_title"/>
+
+            <ImageView
+                android:id="@+id/news_img"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_title"
+                android:layout_centerHorizontal="true"
+                android:hint="news_img"/>
+
+            <TextView
+                android:id="@+id/news_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:layout_below="@id/news_img"
                 android:textColor="@android:color/black"
-                android:layout_centerHorizontal="true"
-                android:hint="test"/>
+                android:textSize="15sp"
+                android:hint="news_description"/>
+
 
         </RelativeLayout>
 

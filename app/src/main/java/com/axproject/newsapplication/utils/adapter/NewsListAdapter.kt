@@ -21,10 +21,11 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>(){
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.itemView.news_title.text = newsList[position].title
         holder.itemView.news_author.text = newsList[position].author
-        Picasso.get().load( newsList[position].urlToImage).into(holder.itemView.news_img);
         holder.itemView.news_published_at.text = newsList[position].publishedAt
+        holder.itemView.news_title.text = newsList[position].title
+        Picasso.get().load(newsList[position].urlToImage).into(holder.itemView.news_img)
+        holder.itemView.news_description.text = newsList[position].description
     }
 
     override fun getItemCount() = newsList.size
