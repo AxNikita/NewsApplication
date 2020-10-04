@@ -21,35 +21,35 @@ data class Article(
     @ColumnInfo(name = "author")
     @SerializedName("author")
     @Expose
-    var author: String,
+    var author: String?,
 
     @ColumnInfo(name = "title")
     @SerializedName("title")
     @Expose
-    var title: String,
+    var title: String?,
 
     @ColumnInfo(name = "description")
     @SerializedName("description")
     @Expose
-    var description: String,
+    var description: String?,
 
     @ColumnInfo(name = "url")
     @SerializedName("url")
     @Expose
-    var url: String,
+    var url: String?,
 
     @ColumnInfo(name = "urlToImage")
     @SerializedName("urlToImage")
     @Expose
-    var urlToImage: String,
+    var urlToImage: String?,
 
     @ColumnInfo(name = "publishedAt")
     @SerializedName("publishedAt")
     @Expose
-    var publishedAt: String,
+    var publishedAt: String?,
 
     @ColumnInfo(name = "content")
     @SerializedName("content")
     @Expose
-    var content: String
+    var content: String?
 )

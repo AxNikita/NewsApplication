@@ -1,20 +1,16 @@
-package com.axproject.newsapplication.ui.fragment.topheadlines
+package com.axproject.newsapplication.ui.fragment.everything
 
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
-import androidx.room.Room
-import com.axproject.newsapplication.core.App
-import com.axproject.newsapplication.data.database.NewsDatabase
 import com.axproject.newsapplication.data.model.Article
 import com.axproject.newsapplication.data.repository.NewsRepository
 import com.axproject.newsapplication.di.module.NetworkModule
 import com.axproject.newsapplication.source.NewsSharedPreferences
-import kotlin.coroutines.coroutineContext
 
-class TopHeadlinesViewModel : ViewModel() {
+class EverythingViewModel : ViewModel() {
 
     private lateinit var repository: NewsRepository
     private lateinit var handler: Handler
@@ -31,23 +27,14 @@ class TopHeadlinesViewModel : ViewModel() {
             context)
     }
 
-    public fun initTimer() {
-        handler = Handler(Looper.getMainLooper())
-        var count = newsSharedPreferences.getContNews()
-        runnable = Runnable {
-            if (count != newsSharedPreferences.getContNews()) {
-                count = newsSharedPreferences.getContNews()
-                getTopArticle()
-            }
-            handler.postDelayed(runnable, 10000)
-        }
-        handler.postDelayed(runnable, 10000) // TODO: 04.10.2020 исправить на 5 секунд
-    }
 
-    public fun getTopArticle() : LiveData<List<Article>> {
+    public fun getEverythingArticle() : LiveData<List<Article>> {
         println("REQUEST")
-        return repository.getTopArticle()
+        return repository.getEverythingArticle()
     }
 
+    public fun deleteTables() {
+        repository.deleteTables()
+    }
 
 }
