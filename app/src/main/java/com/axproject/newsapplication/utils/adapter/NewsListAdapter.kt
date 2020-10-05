@@ -3,11 +3,17 @@ package com.axproject.newsapplication.utils.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.axproject.newsapplication.R
+import com.axproject.newsapplication.data.database.NewsDatabase
 import com.axproject.newsapplication.data.model.Article
+import com.axproject.newsapplication.data.model.Favorite
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.news_item.view.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>(){
 
@@ -26,6 +32,13 @@ class NewsListAdapter : RecyclerView.Adapter<NewsListAdapter.NewsViewHolder>(){
         holder.itemView.news_title.text = newsList[position].title
         Picasso.get().load(newsList[position].urlToImage).into(holder.itemView.news_img)
         holder.itemView.news_description.text = newsList[position].description
+
+        holder.itemView.news_save_img.setOnClickListener {
+            CoroutineScope(Dispatchers.IO).launch {
+                NewsDatabase.getDatabase(holder.itemView.context).newsDao().insertFavorite(Favorite(newsList[position].id))
+            }
+            holder.itemView.news_save_img.background = ContextCompat.getDrawable(holder.itemView.context, R.drawable.ic_star_24)
+        }
     }
 
     override fun getItemCount() = newsList.size

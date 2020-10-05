@@ -36,8 +36,9 @@ class EverythingFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         initNewsList()
+        initSwipeRefresh()
+        initListeners()
     }
-
 
     private fun initNewsList() {
         listLayoutManager = LinearLayoutManager(context)
@@ -53,6 +54,10 @@ class EverythingFragment : Fragment() {
         }
     }
 
+    private fun initListeners() {
+
+    }
+
     private fun initSwipeRefresh() {
         binding.everythingNewsSwipeLayout.setOnRefreshListener {
             val runnable = Runnable {
@@ -63,7 +68,7 @@ class EverythingFragment : Fragment() {
 
             val handler = Handler()
             handler.postDelayed(
-                runnable, 3000.toLong()
+                runnable, 500.toLong()
             )
         }
     }

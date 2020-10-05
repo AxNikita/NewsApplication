@@ -3,7 +3,6 @@ package com.axproject.newsapplication.data.repository
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.axproject.newsapplication.core.App
 import com.axproject.newsapplication.data.database.NewsDatabase
 import com.axproject.newsapplication.data.model.Article
 import com.axproject.newsapplication.data.model.ResponseModel
@@ -11,7 +10,6 @@ import com.axproject.newsapplication.source.NetworkSourceService
 import com.axproject.newsapplication.source.NewsSharedPreferences
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,7 +21,7 @@ class NewsRepository constructor(
     private val context: Context
 ) {
 
-    private val database = NewsDatabase.invoke(context)
+    private val database = NewsDatabase.getDatabase(context)
 
     fun getTopArticle(): LiveData<List<Article>> {
         val listArticle: MutableLiveData<List<Article>> = MutableLiveData()

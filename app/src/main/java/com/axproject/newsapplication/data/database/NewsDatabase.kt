@@ -6,9 +6,10 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.axproject.newsapplication.data.database.dao.NewsDao
 import com.axproject.newsapplication.data.model.Article
+import com.axproject.newsapplication.data.model.Favorite
 import com.axproject.newsapplication.data.model.Source
 
-@Database(entities = [Article::class, Source::class], version = 1)
+@Database(entities = [Article::class, Source::class, Favorite::class], version = 1)
 abstract class NewsDatabase : RoomDatabase() {
 
     abstract fun newsDao(): NewsDao
@@ -17,7 +18,7 @@ abstract class NewsDatabase : RoomDatabase() {
         @Volatile private var instance: NewsDatabase? = null
         private val LOCK = Any()
 
-        operator fun invoke(context: Context)= instance ?: synchronized(LOCK){
+        fun getDatabase(context: Context)= instance ?: synchronized(LOCK){
             instance ?: buildDatabase(context).also { instance = it}
         }
 
