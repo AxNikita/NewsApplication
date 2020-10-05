@@ -44,7 +44,6 @@ class NetworkModule {
                 val origin = chain.request()
                 val requestBuilder = origin.newBuilder()
                     .addHeader("Content-Type", "application/json")
-//                    .addHeader("apiKey", "e65ee0938a2a43ebb15923b48faed18d") // TODO: 03.10.2020 Проверить работоспособность, реализовать согласно документации
                 val request = requestBuilder.build()
                 return chain.proceed(request)
             }
