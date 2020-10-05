@@ -45,7 +45,7 @@ class EverythingFragment : Fragment() {
         listAdapter = NewsListAdapter()
         viewModel.getEverythingArticle().observeForever{
             println("ADD NEW NEWS")
-            listAdapter.addCallLogList(it)
+            listAdapter.addCallLogList(it, this)
         }
         binding.everythingNewsList.apply {
             setHasFixedSize(true)

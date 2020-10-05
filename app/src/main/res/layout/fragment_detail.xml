@@ -2,8 +2,88 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/card_root"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp">
+
+            <TextView
+                android:id="@+id/news_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorMediumChocolate"
+                android:textStyle="bold"
+                android:hint="news_author"/>
+
+            <TextView
+                android:id="@+id/news_published_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:textColor="@color/colorLightChocolate"
+                android:hint="news_published_at"/>
+
+            <TextView
+                android:id="@+id/news_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_author"
+                android:textColor="@android:color/black"
+                android:textSize="19sp"
+                android:textStyle="bold"
+                android:hint="news_title"/>
+
+            <ImageView
+                android:id="@+id/news_img"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_title"
+                android:layout_centerHorizontal="true"
+                android:hint="news_img"/>
+
+            <TextView
+                android:id="@+id/news_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_below="@id/news_img"
+                android:layout_above="@id/news_save_img"
+                android:textColor="@android:color/black"
+                android:textSize="15sp"
+                android:hint="news_description"/>
+
+            <TextView
+                android:id="@+id/news_favorite_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorMediumChocolate"
+                android:textSize="17sp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_toStartOf="@id/news_save_img"
+                android:layout_alignParentBottom="true"
+                android:textStyle="bold"
+                android:text="В закладки" />
+
+            <ImageView
+                android:id="@+id/news_save_img"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/ic_baseline_star24"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:hint="news_img"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </layout>

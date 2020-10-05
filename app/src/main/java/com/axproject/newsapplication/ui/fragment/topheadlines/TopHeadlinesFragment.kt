@@ -46,7 +46,7 @@ class TopHeadlinesFragment : Fragment() {
         listAdapter = NewsListAdapter()
         viewModel.getTopArticle().observeForever{
             println("ADD NEW NEWS")
-            listAdapter.addCallLogList(it)
+            listAdapter.addCallLogList(it, this)
         }
         binding.topNewsList.apply {
             setHasFixedSize(true)

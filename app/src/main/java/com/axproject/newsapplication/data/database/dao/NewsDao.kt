@@ -19,6 +19,9 @@ interface NewsDao {
     @Insert
     fun insertFavorite(favoriteModel: Favorite)
 
+    @Query("SELECT * FROM ARTICLE WHERE title = :title")
+    fun getArticleByTitle(title: String?) : Article
+
     @Query("SELECT * FROM FAVORITE")
     fun getAllFavorites() : List<Favorite>
 

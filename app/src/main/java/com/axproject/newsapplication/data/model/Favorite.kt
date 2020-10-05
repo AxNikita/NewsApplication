@@ -17,6 +17,6 @@ class Favorite(
     @ColumnInfo(name = "articleId")
     @SerializedName("articleId")
     @Expose
-    var articleId: Int?
+    var articleTitle: String // TODO: 05.10.2020 Должен быть ID
 )
 
